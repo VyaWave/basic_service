@@ -9,7 +9,7 @@ export default (appInfo: EggAppInfo) => {
       coreLogName: 'egg-web.log',
       agentLogName: 'egg-agent.log',
       errorLogName: 'common-error.log',
-      dir: `${appInfo.root}/logs`,
+      dir: `${appInfo.baseDir}/logs`,
       outputJSON: true,
     },
     security: {
