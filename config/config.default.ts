@@ -20,6 +20,11 @@ export default (appInfo: EggAppInfo) => {
       errorLogName: 'common-error.log',
       dir: `${appInfo.root}/logs`,
     },
+    security: {
+      csrf: {
+        enable: false,
+      },
+    },
   };
 
   // the return config will combines to EggAppConfig
