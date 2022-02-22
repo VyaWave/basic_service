@@ -31,6 +31,8 @@ export default class HomeController extends Controller {
   }
 
   public async calendar() {
+  console.info(this.app.config);
+
 
     const day = new Date().getDate();
     const month = new Date().getMonth();

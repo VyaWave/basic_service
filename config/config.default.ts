@@ -1,5 +1,7 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 
+/* eslint-disable-next-line*/
+const path = require('path')
 export default (appInfo: EggAppInfo) => {
   const config = {} as PowerPartial<EggAppConfig>;
 
@@ -14,11 +16,12 @@ export default (appInfo: EggAppInfo) => {
   const bizConfig = {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
     logger: {
+      level: 'DEBUG',
       appLogName: `${appInfo.name}-web.log`,
       coreLogName: 'egg-web.log',
       agentLogName: 'egg-agent.log',
-      errorLogName: 'common-error.log',
-      dir: `${appInfo.root}/logs`,
+      dir: path.join(appInfo.baseDir, 'logs'),
+      outputJSON: true,
     },
     security: {
       csrf: {
